@@ -1,0 +1,173 @@
+/* This is the main page of the website */
+/* This page is the first page that the user sees when he opens the website */
+/* This page contains the video and the title of the website */
+.video-bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .video-bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+  
+  /* .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  } */
+  .footer {
+    position: fixed; /* Fixed position */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333; /* or any color you prefer */
+    color: white;
+    text-align: center;
+    z-index: 1000; /* Ensure it's above other items */
+  }
+  
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  
+  /* Add any additional styling you need for your content over the video */
+  .content h1,
+  .content p {
+    text-align: center;
+    margin: 0.5em 0;
+  }
+  
+  /* This is for the full page container to overlay on the video */
+  .container {
+    position: relative;
+    z-index: 10;
+  }
+  .header-text {
+    position: absolute;
+    z-index: 1; /* Ensure the text is above the overlay */
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top:200px;
+    font-size: 2rem; /* Adjust the size as needed */
+    font-weight: bold;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay on video */
+    z-index: 1; /* Ensure it's above the video but below the text */
+  }
+
+    
+  
+  
+  .custom-brand {
+    font-size: 2rem; /* Adjust size as needed */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for transform property */
+  }
+  
+  .custom-brand:hover {
+    transform: scale(1.1); /* Slightly grow the element on hover */
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .header-text {
+    animation: fadeIn 2s ease-out forwards; /* Apply the animation */
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  .btn-primary {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* A slightly different shade for the button */
+    transform: translateY(-2px); /* Move the button up a bit */
+  }
+
+  /* Input field styling */
+.form-control {
+    border: 3px solid #007bff; /* Use a color that matches your theme */
+    border-radius: 0.70rem; /* Rounded borders */
+    padding: 0.5rem 1rem; /* Comfortable padding */
+    font-size: 1rem; /* Larger, readable text size */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Smooth transition for interactions */
+  }
+  
+  /* Input field focus effect */
+  .form-control:focus {
+    border-color: #0062cc; /* Darker border on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Glowing effect on focus */
+  }
+  
+  /* Input group adjustments */
+  .input-group {
+    margin-bottom: 1rem; /* Add space between input groups */
+  }
+  
+  /* Placeholder text styling (optional) */
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #95a5a6;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #95a5a6;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #95a5a6;
+  }
+  
+  /* Styling for the button to be consistent with input fields */
+  .btn-primary {
+    padding: 0.5rem 1rem; /* Matching padding */
+    font-size: 1rem; /* Matching font size */
+    border-radius: 0.25rem; /* Rounded borders */
+    border: 2px solid transparent; /* Transparent border, can change on focus if needed */
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out; /* Smooth transition for button interactions */
+  }
+  
+  .btn-primary:focus, .btn-primary:hover {
+    background-color: #0056b3; /* Slightly darker background on hover/focus */
+    border-color: #004085; /* Matching border color change */
+  }
+  
+  /* Styles for the footer or any other elements go here */
+  /* Override Bootstrap's padding for the Navbar.Brand */
+.custom-brand {
+    padding-right: 0 !important; /* Remove padding */
+  }
+  
+  /* If Navbar is inside a container that has its own padding, you may need to override that as well */
+  .navbar .container,
+  .navbar .container-fluid {
+    padding-right: 0 !important; /* Remove padding */
+  }
