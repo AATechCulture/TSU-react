@@ -171,14 +171,27 @@
 import './App.css';
 import { Navbar, Container, Nav, Row, Col, Form, InputGroup } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from 'axios';
+import { useState } from 'react';
+
 
 function App() {
+  const [state,setState]=useState({})
+  
+  function handleSubmit() {
+  
+    fetch('http://localhost:8000/baggage/')
+    .then(response => response.json())
+    .then(data => setState({person_info: data.total}))
+    return;
+  }
   return (
     <div className="App">
       {/* ... Your existing Navbar code ... */}
       <header >
        <Navbar bg="dark" data-bs-theme="dark">
          <Container>
+          {!!Object.key(state).length&&state.name}
          <Navbar.Brand href="#SkyTrack+" className="custom-brand">SkyTrack+</Navbar.Brand>
            <Nav className="me-auto">
              {/* <Nav.Link href="#home">help</Nav.Link> */}
@@ -196,9 +209,8 @@ function App() {
           <h1 className="header-text">WHERE EVERY BAG JOURNEY IS JUST AS IMPORTANT AS THE TRAVELER</h1>
       
           </div>
-        <Container className="position-absolute">
-        
-          
+        <form className="position-absolute" method='post' id='person_info' >
+
           <Row className="justify-content-center">
           
             <Col xs={12} md={4}>
@@ -219,10 +231,10 @@ function App() {
           </Row>
           <Row className="justify-content-center">
             <Col xs={12} className="text-center">
-              <button className="btn btn-primary">Submit</button>
+              <button className="btn btn-primary" onSubmit={handleSubmit}>Submit</button>
             </Col>
           </Row>
-        </Container>
+        </form>
       </main>
       <footer className="footer mt-auto py-3 bg-dark text-white">
   <Container className="d-flex justify-content-center">
