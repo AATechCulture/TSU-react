@@ -185,6 +185,7 @@ function App() {
     .then(data => setState({person_info: data.total}))
     return;
   }
+  
   return (
     <div className="App">
       {/* ... Your existing Navbar code ... */}
